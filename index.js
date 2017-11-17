@@ -17,9 +17,9 @@ app.get('/getbigbelly', function(req,res) {
   res.send('hi world' + req);
 });
 
-app.post('/bigbelly', function(req,res) {
+app.post('/geoeventlogger', function(req,res) {
   // const res_data = JSON.parse(req.body);
-  console.log('request = ', req.body);
+  console.log('request = ', req.body.assets[0].latestFullness);
   res.send('inside app.post');
 });
 
