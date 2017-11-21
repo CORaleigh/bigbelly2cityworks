@@ -65,7 +65,9 @@ app.post('/geoeventlogger', function (req, res) {
   if (req.body.assets[0] != null) {
   	this.assets.forEach((item) => {
 	  this.results = JSON.parse(item);
-  	  console.log('fullness is ', this.results.latestFullness);
+	     if (this.results.latestFullness == "20 Percent") {
+			console.log('create a Service Request');
+	     }
  	});
   }
   
