@@ -61,7 +61,7 @@ app.post('/geoeventlogger', function (req, res) {
   var assets = [];
   this.assets = req.body.assets;  
   console.log('assets - ', assets);
-  if (assets[0] != null) {
+  if (req.body.assets[0] != null) {
      this.res_data = JSON.parse(assets);
      console.log('res_data = ', res_data);     
   }
