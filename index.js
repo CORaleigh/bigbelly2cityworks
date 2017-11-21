@@ -55,8 +55,10 @@ app.get('/getbigbelly', function(req,res) {
   res.send('hi world' + req);
 });
 
-app.post('/geoeventlogger', function(req,res) {
-  const res_data = JSON.parse(req.body);
+app.post('/geoeventlogger', function (req, res) {
+  console.log('reqbody - ', req.body);
+  const body = req.body;  
+  const res_data = JSON.parse(body);
   console.log('res_data = ', res_data);
   console.log('res_data = ', res_data.assets[0]);
   console.log('res_data = ', res_data.assets[0].latestFullness);
