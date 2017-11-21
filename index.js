@@ -59,7 +59,8 @@ app.post('/geoeventlogger', function (req, res) {
   console.log('reqbody - ', req.body);
   const assets = req.body.assets;  
   console.log('assets - ', assets);
-    if (JSON.stringify(req.data)=='{}') {
+
+    if (JSON.stringify(req.body)=='{ assets: [] }') {
         //the response is null
         console.log('request is null');
     } else {
