@@ -57,18 +57,14 @@ app.get('/getbigbelly', function(req,res) {
 
 app.post('/geoeventlogger', function (req, res) {
   console.log('reqbody - ', req.body);
+  const res_data;
   const assets = req.body.assets;  
   console.log('assets - ', assets);
-
-    if (JSON.stringify(req.body)=='{ assets: [] }') {
-        //the response is null
-        console.log('request is null');
-    } else {
-        //the response of JSON is not null
-        console.log('request is not null');
-    }
-  const res_data = JSON.parse(assets);
-  console.log('res_data = ', res_data);
+  if (assets[0] != null) {
+     this.res_data = JSON.parse(assets);
+     console.log('res_data = ', res_data);     
+  }
+  
 //   console.log('res_data = ', res_data.assets[0]);
 //   console.log('res_data = ', res_data.assets[0].latestFullness);
 //   console.log('request = ', req.body.assets[0].latestFullness);
