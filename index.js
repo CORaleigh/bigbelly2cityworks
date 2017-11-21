@@ -57,13 +57,16 @@ app.get('/getbigbelly', function(req,res) {
 
 app.post('/geoeventlogger', function (req, res) {
   console.log('reqbody - ', req.body);
+  let results = null;
   var res_data = '';
   var assets = [];
   this.assets = req.body.assets;  
-  console.log('assets - ', assets);
+  console.log('assets - ', this.assets);
   if (req.body.assets[0] != null) {
-     this.res_data = JSON.parse(req.body.assets[0]);
-     console.log('res_data = ', JSON.stringify(res_data));     
+  	this.assets.forEach((item) => {
+	  this.results = JSON.parse(item);
+  	  console.log('fullness is ', this.results.latestFullness);
+ 	});
   }
   
 //   console.log('res_data = ', res_data.assets[0]);
