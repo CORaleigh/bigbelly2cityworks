@@ -57,8 +57,9 @@ app.get('/getbigbelly', function(req,res) {
 
 app.post('/geoeventlogger', function (req, res) {
   console.log('reqbody - ', req.body);
-  const res_data;
-  const assets = req.body.assets;  
+  var res_data = '';
+  var assets = [];
+  this.assets = req.body.assets;  
   console.log('assets - ', assets);
   if (assets[0] != null) {
      this.res_data = JSON.parse(assets);
