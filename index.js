@@ -83,7 +83,7 @@ app.post("/geoeventlogger", function(req, res) {
       this.results = JSON.parse(JSON.stringify(item));
       if (this.results.latestFullness == "20 Percent") {
         console.log("create a Service Request");
-        createServiceRequest;
+        createServiceRequest();
       }
     });
   }
