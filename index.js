@@ -35,7 +35,7 @@ var options = {
 };
 
 // Example of a POST method
-function createServiceRequest(e) {
+function createServiceRequest() {
   // var source = Rx.Observable.create(function(observer) {
     request(options, function(error, response, body) {
       if (error) {
