@@ -7,7 +7,7 @@ var io = require("socket.io")(http);
 // const requests_ = new Rx.Subject();
 var request = require("request-promise");
 
-var srPostBody = JSON.stringify({
+var srPostBody = {
   callerFirstName: "Surender",
   callerLastName: "Dalal",
   callerWorkPhone: "9196708062",
@@ -21,7 +21,7 @@ var srPostBody = JSON.stringify({
   callerCity: "cary",
   callerState: "NC",
   callerZip: "27513"
-});
+};
 
 var options = {
   method: "POST",
@@ -57,13 +57,13 @@ app.get("/getbigbelly", function(req, res) {
 });
 
 app.post("/geoeventlogger", function(req, res) {
-//  console.log("reqbody - ", req.body);
+  console.log("reqbody - ", req.body);
   let results = null;
   this.assets = req.body.assets;
-  // console.log("assets - ", this.assets);
+  console.log("assets - ", this.assets);
   if (req.body.assets[0] != null) {
     this.assets.forEach(item => {
-      this.results = JSON.parse(item);
+      this.results = JSON.parse(JSON.stringify(item));
 //	console.log('latest Fullness = ', this.results.latestFullness);
       if (this.results.latestFullness == "20 Percent") {
         console.log("create a Service Request");
